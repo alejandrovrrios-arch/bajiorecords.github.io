@@ -6,28 +6,29 @@
     <title>BAJÍO RÉCORDS | SITIO OFICIAL</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
+        html, body {
             background-color: #0d141d;
             color: #ffffff;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            width: 100%;
             min-height: 100vh;
-            overflow-x: hidden;
         }
 
         /* Pantalla 1: Bienvenida */
         .hero-screen {
-            height: 100vh;
+            min-height: 100vh;
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
         .logo-img {
-            width: 150px;
-            max-width: 50vw;
+            max-width: 180px;
+            max-height: 180px;
+            width: auto;
             height: auto;
             object-fit: contain;
             margin-bottom: 24px;
@@ -68,7 +69,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
         .container {
             max-width: 420px;
@@ -154,8 +155,7 @@
 
     <!-- PANTALLA DE BIENVENIDA -->
     <section class="hero-screen">
-        <!-- Reemplaza "logo.png" por el nombre exacto de tu archivo de imagen si es diferente (ej. logo.jpg) -->
-        <img src="logo.png" alt="BAJÍO RÉCORDS LOGO" class="logo.png">
+        <img src="logo.png" alt="BAJÍO RÉCORDS LOGO" class="logo.pgn">
         <p class="welcome-text">WELCOME TO BAJÍO RECORDS</p>
         <button onclick="scrollToMenu()" class="btn-start">INICIO</button>
     </section>
@@ -166,7 +166,7 @@
             <h1>BAJÍO RÉCORDS</h1>
             <p class="subtitle">SELLO DISCOGRÁFICO INDEPENDIENTE</p>
             
-            <button onclick="toggleSpotify()" class="btn">🎧 CATÁLOGO EN SPOTIFY </button>
+            <button onclick="toggleSpotify()" class="btn">🎧 CATÁLOGO EN SPOTIFY ▼</button>
             
             <div id="spotifyList" class="dropdown-content">
                 <a href="https://open.spotify.com/artist/1uLtlNQjKWd3GxKVDmeTzY?si=THr5XUYpT72OR7fGpKDkEA" target="_blank" class="artist-link">NUNCHO <span>ESCUCHAR ↗</span></a>
