@@ -3,18 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bajío Récords | Sitio Oficial</title>
+    <title>BAJÍO RÉCORDS | SITIO OFICIAL</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: #0b0b0b;
+            background-color: #0d141d;
             color: #ffffff;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Pantalla 1: Bienvenida */
+        .hero-screen {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .logo-img {
+            max-width: 180px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+        .welcome-text {
+            font-size: 1.1rem;
+            color: #a0acba;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 35px;
+        }
+        .btn-start {
+            background: #ffffff;
+            color: #0d141d;
+            padding: 16px 40px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        .btn-start:hover {
+            transform: scale(1.05);
+            background: #e2e8f0;
+        }
+
+        /* Pantalla 2: Menú Principal */
+        .main-content {
+            min-height: 100vh;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            padding: 40px 20px;
         }
         .container {
             max-width: 420px;
@@ -29,7 +82,7 @@
             text-transform: uppercase;
         }
         .subtitle {
-            color: #888;
+            color: #7b8a9b;
             font-size: 0.9rem;
             margin-bottom: 30px;
             letter-spacing: 1px;
@@ -38,29 +91,32 @@
         .btn {
             display: block;
             width: 100%;
-            background: #181818;
+            background: #172230;
             color: #fff;
             text-decoration: none;
             padding: 16px 20px;
             border-radius: 12px;
             margin-bottom: 12px;
-            font-weight: 600;
-            border: 1px solid #2a2a2a;
+            font-weight: 700;
+            border: 1px solid #27374d;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
             transition: all 0.2s ease;
             text-align: center;
+            text-transform: uppercase;
         }
         .btn:hover {
             background: #ffffff;
-            color: #000000;
+            color: #0d141d;
             border-color: #ffffff;
         }
-        /* Menú Desplegable de Artistas */
+
+        /* Desplegable de Artistas */
         .dropdown-content {
             display: none;
-            background: #121212;
-            border: 1px solid #2a2a2a;
+            background: #131c28;
+            border: 1px solid #27374d;
             border-radius: 12px;
             padding: 10px;
             margin-bottom: 14px;
@@ -70,51 +126,71 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px;
-            color: #ccc;
+            padding: 14px 12px;
+            color: #cbd5e1;
             text-decoration: none;
-            border-bottom: 1px solid #222;
-            font-size: 0.95rem;
-            font-weight: 500;
+            border-bottom: 1px solid #1e2c3d;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
             transition: color 0.2s;
         }
         .artist-link:last-child { border-bottom: none; }
         .artist-link:hover { color: #1DB954; }
-        .artist-link span { font-size: 0.8rem; color: #666; }
+        .artist-link span { font-size: 0.75rem; color: #64748b; font-weight: 500; }
         .show { display: block; }
         .footer {
             margin-top: 35px;
-            color: #444;
+            color: #475569;
             font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>BAJÍO RÉCORDS</h1>
-        <p class="subtitle">Sello Discográfico Independiente</p>
-        
-        <!-- Botón Desplegable Spotify -->
-        <button onclick="toggleSpotify()" class="btn">🎧 Catálogo en Spotify </button>
-        
-        <div id="spotifyList" class="dropdown-content">
-            <a href="https://open.spotify.com/artist/1uLtlNQjKWd3GxKVDmeTzY?si=THr5XUYpT72OR7fGpKDkEA" target="_blank" class="artist-link">NUNCHO <span>Escuchar ↗</span></a>
-            <a href="https://open.spotify.com/artist/702kG0xjEgJkTDZENxmAXc?si=cQ4pCKm7TkOnitlPEY6n8w" target="_blank" class="artist-link">JR Music <span>Escuchar ↗</span></a>
-            <a href="https://open.spotify.com/artist/5UwKQIN4liBc1FzEo4kQ7w?si=SQ9yCTe5SWyFp6uyW855NA" target="_blank" class="artist-link">La IA Records <span>Escuchar ↗</span></a>
-            <a href="https://open.spotify.com/artist/6o2wCTaBd53hIhAanS8zrE?si=W9tVXxLCQqa_rGzx3qEBLA" target="_blank" class="artist-link">La Posesión Norteña <span>Escuchar ↗</span></a>
-            <a href="https://open.spotify.com/artist/23nvERBfyJniYS3nSwTMp3?si=89SbSdYZRre4tYmfjxKKEg" target="_blank" class="artist-link">Grupo Zona Regia <span>Escuchar ↗</span></a>
-        </div>
 
-        <a href="https://youtube.com/@bajiorecords?si=dyK-UbBvbm6tTZpc" target="_blank" class="btn">▶️ Canal de YouTube</a>
-        <a href="https://www.instagram.com/bajio_records_music?stkn=NjhiOXpyeGU0Y20w&utm_source=qr" target="_blank" class="btn">📸 Instagram Oficial</a>
-        <a href="mailto:bajiomusicgroup@hotmail.com" class="btn">📩 Envío de Demos / Contacto</a>
+    <!-- PANTALLA DE BIENVENIDA -->
+    <section class="hero-screen">
+        <img src="logo.png" alt="BAJÍO RÉCORDS LOGO" class="logo-img">
+        <p class="welcome-text">WELCOME TO BAJÍO RECORDS</p>
+        <button onclick="scrollToMenu()" class="btn-start">INICIO</button>
+    </section>
 
-        <div class="footer">
-            &copy; Bajío Récords. Todos los derechos reservados.
+    <!-- PANTALLA DE MENÚ -->
+    <section id="menuSection" class="main-content">
+        <div class="container">
+            <h1>BAJÍO RÉCORDS</h1>
+            <p class="subtitle">SELLO DISCOGRÁFICO INDEPENDIENTE</p>
+            
+            <button onclick="toggleSpotify()" class="btn">🎧 CATÁLOGO EN SPOTIFY ▼</button>
+            
+            <div id="spotifyList" class="dropdown-content">
+                <a href="https://open.spotify.com/artist/1uLtlNQjKWd3GxKVDmeTzY?si=THr5XUYpT72OR7fGpKDkEA" target="_blank" class="artist-link">NUNCHO <span>ESCUCHAR ↗</span></a>
+                <a href="https://open.spotify.com/artist/702kG0xjEgJkTDZENxmAXc?si=cQ4pCKm7TkOnitlPEY6n8w" target="_blank" class="artist-link">JR MUSIC <span>ESCUCHAR ↗</span></a>
+                <a href="https://open.spotify.com/artist/5UwKQIN4liBc1FzEo4kQ7w?si=SQ9yCTe5SWyFp6uyW855NA" target="_blank" class="artist-link">LA IA RECORDS <span>ESCUCHAR ↗</span></a>
+                <a href="https://open.spotify.com/artist/6o2wCTaBd53hIhAanS8zrE?si=W9tVXxLCQqa_rGzx3qEBLA" target="_blank" class="artist-link">LA POSESIÓN NORTEÑA <span>ESCUCHAR ↗</span></a>
+                <a href="https://open.spotify.com/artist/23nvERBfyJniYS3nSwTMp3?si=89SbSdYZRre4tYmfjxKKEg" target="_blank" class="artist-link">GRUPO ZONA REGIA <span>ESCUCHAR ↗</span></a>
+            </div>
+
+            <a href="https://youtube.com/@bajiorecords?si=dyK-UbBvbm6tTZpc" target="_blank" class="btn">▶️ CANAL DE YOUTUBE</a>
+            <a href="https://www.instagram.com/bajio_records_music?stkn=NjhiOXpyeGU0Y20w&utm_source=qr" target="_blank" class="btn">📸 INSTAGRAM OFICIAL</a>
+            <a href="mailto:bajiomusicgroup@hotmail.com" class="btn">📩 ENVÍO DE DEMOS / CONTACTO</a>
+
+            <div class="footer">
+                &copy; BAJÍO RÉCORDS. TODOS LOS DERECHOS RESERVADOS.
+            </div>
         </div>
-    </div>
+    </section>
 
     <script>
+        function scrollToMenu() {
+            document.getElementById("menuSection").scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
         function toggleSpotify() {
             document.getElementById("spotifyList").classList.toggle("show");
         }
